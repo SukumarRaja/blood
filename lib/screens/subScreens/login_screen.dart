@@ -74,14 +74,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 GestureDetector(
                   onTap: () async{
-                    // Navigator.of(context).popUntil((route) => route.isFirst);
-                    if(_formKey.currentState!.validate()){
-                      await AuthState().userLogin(_emailController.text.trim(), _phoneController.text.trim());
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Something went wrong.",style: TextStyle(fontWeight: FontWeight.w400),),backgroundColor: Colors.deepOrangeAccent,));
-                      return ;
-                    }
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                    // // Navigator.of(context).popUntil((route) => route.isFirst);
+                    // if(_formKey.currentState!.validate()){
+                    //   await AuthState().userLogin(_emailController.text.trim(), _phoneController.text.trim());
+                    //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                    // } else {
+                    //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Something went wrong.",style: TextStyle(fontWeight: FontWeight.w400),),backgroundColor: Colors.deepOrangeAccent,));
+                    //   return ;
+                    // }
 
                   },
                   child: Container(
